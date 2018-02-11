@@ -24,7 +24,7 @@ package() {
     
     #-------------------------mate-panel config files----------------------
     install -d ${pkgdir}/usr/share/mate-panel/layouts/
-    install -m644 usr/share/mate-panel/layouts/* "${pkgdir}usr/share/mate-panel/layouts/"
+    install -m644 usr/share/mate-panel/layouts/* "${pkgdir}/usr/share/mate-panel/layouts/"
 
 	install -d ${pkgdir}/etc/skel_mate
     cp -r ${srcdir}/namib-mate-settings/etc/skel_mate/ "${pkgdir}/etc/"
