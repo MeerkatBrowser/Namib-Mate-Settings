@@ -15,20 +15,20 @@ package() {
     package_path="/etc/$pkgname"
     cd "${srcdir}/${pkgname}"
 
-	install -d ${pkgdir}/etc/lightdm/
-    install -m644 etc/lightdm/* "${pkgdir}/etc/lightdm/"
+	install -d ${pkgdir}$package_path/etc/lightdm/
+    install -m644 etc/lightdm/* "${pkgdir}$package_path/etc/lightdm/"
 
 	#-------------------------glib config files----------------------
-    install -d ${pkgdir}/usr/share/glib-2.0/schemas/
-    install -m644 usr/share/glib-2.0/schemas/* "${pkgdir}/usr/share/glib-2.0/schemas/"
+    install -d ${pkgdir}$package_path/usr/share/glib-2.0/schemas/
+    install -m644 usr/share/glib-2.0/schemas/* "${pkgdir}$package_path/usr/share/glib-2.0/schemas/"
     
     #-------------------------mate-panel config files----------------------
-    install -d ${pkgdir}/usr/share/mate-panel/layouts/
-    install -m644 usr/share/mate-panel/layouts/* "${pkgdir}/usr/share/mate-panel/layouts/"
+    install -d ${pkgdir}$package_path/usr/share/mate-panel/layouts/
+    install -m644 usr/share/mate-panel/layouts/* "${pkgdir}$package_path/usr/share/mate-panel/layouts/"
 
-	install -d ${pkgdir}/etc/skel_mate
-    cp -r ${srcdir}/namib-mate-settings/etc/skel_mate/ "${pkgdir}/etc/"
+	install -d ${pkgdir}$package_path/etc/skel_mate
+    cp -r ${srcdir}/namib-mate-settings/etc/skel_mate/ "${pkgdir}$package_path/etc/"
     
-    install -d ${pkgdir}/usr/share/backgrounds/namib/config
-    install -m644 mate-backgrounds.xml "${pkgdir}/usr/share/backgrounds/namib/config"
+    install -d ${pkgdir}$package_path/usr/share/backgrounds/namib/config
+    install -m644 mate-backgrounds.xml "${pkgdir}$package_path/usr/share/backgrounds/namib/config"
 }
