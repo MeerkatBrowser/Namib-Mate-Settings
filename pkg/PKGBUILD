@@ -30,5 +30,5 @@ package() {
     cp -r ${srcdir}/namib-mate-settings/etc/skel_mate/ "${pkgdir}/etc/"
     
     install -d ${pkgdir}/usr/share/backgrounds/namib/config
-    install -m644 namib-mate-settings/mate-backgrounds.xml "${pkgdir}/usr/share/backgrounds/namib/config"
+    install -m644 mate-backgrounds.xml "${pkgdir}/usr/share/backgrounds/namib/config"
 }
