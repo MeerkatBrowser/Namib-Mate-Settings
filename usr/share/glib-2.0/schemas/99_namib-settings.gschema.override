@@ -1,0 +1,13 @@
+[org.mate.background]
+picture-filename='/usr/share/backgrounds/mate/1802.jpg'
+picture-options='stretched'
+
+[org.mate.interface]
+gtk-theme='Numix'
+icon-theme='Arc'
+
+[org.mate.Marco.general]
+theme='Numix'
+
+[org.mate.panel]
+default-layout='namib'
