@@ -6,7 +6,7 @@ arch=('any')
 url="https://github.com/MeerkatBrowser/namib-mate-settings"
 license=('GPL')
 makedepends=('git')
-replace=('mate-backgrounds')
+depends=('lightdm' 'lightdm-gtk-greeter' 'mate' 'mate-extra' 'namib-wallpapers')
 source=("git+$url.git")
 sha256sums=('SKIP')
 #install=$pkgname.install
@@ -18,7 +18,7 @@ package() {
 	install -d ${pkgdir}/usr/share/mate-panel/layouts
 
 	cp -r ${srcdir}/namib-mate-settings/etc/lightdm/. "${pkgdir}/etc/lightdm/"
-	cp -r ${srcdir}/namib-mate-settings/etc/skel_mate/. "${pkgdir}/etc/skel/"
+	cp -r ${srcdir}/namib-mate-settings/etc/skel/. "${pkgdir}/etc/skel/"
 
 	cp -r ${srcdir}/namib-mate-settings/usr/share/glib-2.0/schemas/. "${pkgdir}/usr/share/glib-2.0/schemas/"
 	cp -r ${srcdir}/namib-mate-settings/usr/share/mate-panel/layouts/. "${pkgdir}/usr/share/mate-panel/layouts/"
