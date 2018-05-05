@@ -6,7 +6,7 @@ post_install() {
 	glib-compile-schemas /usr/share/glib-2.0/schemas
     echo "GLib schemas compiled"
 
-	\cp /etc/skel_mate/.xinitrc /etc/skel_new/.xinitrc
+	\cp /etc/skel_mate/.xinitrc /etc/skel/.xinitrc
 	
 	\rm -rf /usr/share/mate-background-properties
     \rm -rf /usr/share/backgrounds/mate

@@ -7,42 +7,29 @@ url="https://github.com/MeerkatBrowser/namib-mate-settings"
 license=('GPL')
 makedepends=('git')
 optdepends=('lightdm' 'lightdm-gtk-greeter' 'mate' 'mate-extra' 'namib-wallpapers')
+conflicts=('mate-backgrounds')
 source=("git+$url.git")
 sha256sums=('SKIP')
-#install=$pkgname.install
+install=$pkgname.install
 
 package() {
-	install -d ${pkgdir}/etc/lightdm
-    install -d ${pkgdir}/usr/share/mate-background-properties
-	install -d ${pkgdir}/usr/share/glib-2.0/schemas
-	install -d ${pkgdir}/usr/share/mate-panel/layouts
+    package_path="/etc/$pkgname"
+    cd "${srcdir}/${pkgname}"
 
-	cp -r ${srcdir}/namib-mate-settings/etc/lightdm/. "${pkgdir}/etc/lightdm/"
-	cp -r ${srcdir}/namib-mate-settings/etc/skel/. "${pkgdir}/etc/skel/"
-
-	cp -r ${srcdir}/namib-mate-settings/usr/share/glib-2.0/schemas/. "${pkgdir}/usr/share/glib-2.0/schemas/"
-	cp -r ${srcdir}/namib-mate-settings/usr/share/mate-panel/layouts/. "${pkgdir}/usr/share/mate-panel/layouts/"
-
-	cp -r ${srcdir}/namib-mate-settings/usr/share/mate-background-properties/namib-backgrounds.xml "${pkgdir}/usr/share/mate-background-properties/namib-backgrounds.xml"
-
-
-    #package_path="/etc/$pkgname"
-    #cd "${srcdir}/${pkgname}"
-
-	#install -d ${pkgdir}$package_path/etc/lightdm/
-    #install -m644 etc/lightdm/* "${pkgdir}$package_path/etc/lightdm/"
+	install -d ${pkgdir}$package_path/etc/lightdm/
+    install -m644 etc/lightdm/* "${pkgdir}$package_path/etc/lightdm/"
 
 	#-------------------------glib config files----------------------
-    #install -d ${pkgdir}$package_path/usr/share/glib-2.0/schemas/
-    #install -m644 usr/share/glib-2.0/schemas/* "${pkgdir}$package_path/usr/share/glib-2.0/schemas/"
+    install -d ${pkgdir}$package_path/usr/share/glib-2.0/schemas/
+    install -m644 usr/share/glib-2.0/schemas/* "${pkgdir}$package_path/usr/share/glib-2.0/schemas/"
     
     #-------------------------mate-panel config files----------------------
-    #install -d ${pkgdir}$package_path/usr/share/mate-panel/layouts/
-    #install -m644 usr/share/mate-panel/layouts/* "${pkgdir}$package_path/usr/share/mate-panel/layouts/"
+    install -d ${pkgdir}$package_path/usr/share/mate-panel/layouts/
+    install -m644 usr/share/mate-panel/layouts/* "${pkgdir}$package_path/usr/share/mate-panel/layouts/"
 
-	#install -d ${pkgdir}$package_path/etc/skel_mate
-    #cp -r ${srcdir}/namib-mate-settings/etc/skel_mate/ "${pkgdir}$package_path/etc/"
+	install -d ${pkgdir}$package_path/etc/skel_mate
+    cp -r ${srcdir}/namib-mate-settings/etc/skel_mate/ "${pkgdir}$package_path/etc/"
     
-    #install -d ${pkgdir}$package_path/usr/share/backgrounds/namib/config
-    #install -m644 mate-backgrounds.xml "${pkgdir}$package_path/usr/share/backgrounds/namib/config"
+    install -d ${pkgdir}$package_path/usr/share/backgrounds/namib/config
+    install -m644 mate-backgrounds.xml "${pkgdir}$package_path/usr/share/backgrounds/namib/config"
 }
