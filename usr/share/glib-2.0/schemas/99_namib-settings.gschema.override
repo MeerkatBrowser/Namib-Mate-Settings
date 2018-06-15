@@ -11,3 +11,6 @@ theme='Materia-Namib'
 
 [org.mate.panel]
 default-layout='namib'
+
+[org.mate.peripherals-mouse]
+cursor-theme='xcursor-breeze'
