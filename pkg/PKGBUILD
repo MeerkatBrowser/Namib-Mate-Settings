@@ -14,7 +14,6 @@ install=$pkgname.install
 package() {
     install -d ${pkgdir}/etc/skel
 	install -d ${pkgdir}/etc/lightdm_mate
-	install -d ${pkgdir}/etc/skel
 	install -d ${pkgdir}/usr/share/glib-2.0/schemas
     install -d ${pkgdir}/usr/share/mate-background-properties
     install -d ${pkgdir}/usr/share/mate-panel/layouts
