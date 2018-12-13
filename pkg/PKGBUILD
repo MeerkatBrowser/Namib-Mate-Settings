@@ -1,7 +1,7 @@
 pkgname=namib-mate-settings
 pkgdesc='Settings file for Namib Mate'
 pkgver=18.08
-pkgrel=1
+pkgrel=2
 arch=('any')
 url="https://github.com/MeerkatBrowser/namib-mate-settings"
 license=('GPL')
